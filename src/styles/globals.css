@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-forest: #0B3D2E;
+  --color-teal: #087E8B;
+  --color-gold: #C99A3D;
+  --color-cream: #F7F4EC;
+  --color-charcoal: #17201D;
+}
+
+body {
+  color: #17201D;
+  background-color: #F7F4EC;
+  min-height: 100vh;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle, dignified soundwave animation for vernacular voice audio */
+@keyframes voicePulse {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 20px;
+  }
+}
+
+.animate-soundwave-1 {
+  animation: voicePulse 0.9s ease-in-out infinite;
+}
+.animate-soundwave-2 {
+  animation: voicePulse 0.9s ease-in-out infinite 0.2s;
+}
+.animate-soundwave-3 {
+  animation: voicePulse 0.9s ease-in-out infinite 0.4s;
+}
+
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+/* Accessible, elegant focus indicator */
+*:focus-visible {
+  outline: 2px solid #087E8B;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbars for clean readability */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D4C8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C99A3D;
+}

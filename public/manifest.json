@@ -1,0 +1,34 @@
+{
+  "name": "GraminCare AI — Rural Healthcare Platform",
+  "short_name": "GraminCare AI",
+  "description": "AI-assisted rural healthcare delivery, vernacular document readiness, and clinical decision support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F4EC",
+  "theme_color": "#0B3D2E",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
