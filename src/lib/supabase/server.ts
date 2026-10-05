@@ -1,5 +1,6 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { isSupabaseConfigured, getSupabaseUrl, getSupabasePublishableKey } from "./client";
+export { createClient as createServerSupabaseClient } from "@/utils/supabase/server";
 
 export const getSupabaseServerClient = (): SupabaseClient | null => {
   if (!isSupabaseConfigured()) {

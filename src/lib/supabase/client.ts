@@ -1,4 +1,5 @@
-import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
+import { SupabaseClient } from "@supabase/supabase-js";
 
 export const getSupabaseUrl = (): string => {
   return process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -31,23 +32,14 @@ let clientInstance: SupabaseClient | null = null;
 export const getSupabaseClient = (): SupabaseClient | null => {
   if (!isSupabaseConfigured()) return null;
   if (!clientInstance) {
-    const url = getSupabaseUrl();
-    const key = getSupabasePublishableKey();
-    clientInstance = createClient(url, key, {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-      },
-    });
+    clientInstance = createBrowserClient(
+      getSupabaseUrl(),
+      getSupabasePublishableKey()
+    );
   }
   return clientInstance;
 };
 
 export const supabase = isSupabaseConfigured()
-  ? createClient(getSupabaseUrl(), getSupabasePublishableKey(), {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-      },
-    })
+  ? createBrowserClient(getSupabaseUrl(), getSupabasePublishableKey())
   : null;
