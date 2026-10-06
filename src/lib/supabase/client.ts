@@ -32,14 +32,17 @@ let clientInstance: SupabaseClient | null = null;
 export const getSupabaseClient = (): SupabaseClient | null => {
   if (!isSupabaseConfigured()) return null;
   if (!clientInstance) {
-    clientInstance = createBrowserClient(
-      getSupabaseUrl(),
-      getSupabasePublishableKey()
-    );
+    try {
+      clientInstance = createBrowserClient(
+        getSupabaseUrl(),
+        getSupabasePublishableKey()
+      );
+    } catch (e) {
+      console.warn("Failed to initialize Supabase client instance:", e);
+      return null;
+    }
   }
   return clientInstance;
 };
 
-export const supabase = isSupabaseConfigured()
-  ? createBrowserClient(getSupabaseUrl(), getSupabasePublishableKey())
-  : null;
+export const supabase = isSupabaseConfigured() ? getSupabaseClient() : null;

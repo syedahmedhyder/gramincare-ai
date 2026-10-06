@@ -17,10 +17,15 @@ export const getSupabaseServerClient = (): SupabaseClient | null => {
     return null;
   }
 
-  return createClient(supabaseUrl, supabaseServiceKey, {
-    auth: {
-      persistSession: false,
-      autoRefreshToken: false,
-    },
-  });
+  try {
+    return createClient(supabaseUrl, supabaseServiceKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+    });
+  } catch (err) {
+    console.warn("Failed to create Supabase server client:", err);
+    return null;
+  }
 };
