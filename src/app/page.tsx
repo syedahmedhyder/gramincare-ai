@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   FileCheck2, 
   Stethoscope, 
@@ -27,7 +28,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="space-y-12 pb-20">
+    <div className="space-y-16 pb-20">
       {/* Hero Section: Deep Forest Green with Soft Cream & Warm Gold */}
       <section className="bg-brand-forest text-brand-cream pt-14 pb-18 px-4 sm:px-6 lg:px-8 border-b border-brand-forestLight shadow-soft">
         <div className="max-w-7xl mx-auto">
@@ -147,86 +148,355 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Core Modules Grid */}
+      {/* SECTION 1: What can GraminCare help you with? */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
+        <div className="text-center sm:text-left space-y-2 max-w-2xl">
           <span className="text-xs font-bold text-brand-teal uppercase tracking-widest">
-            Core Modules
+            Guided Care & Entitlements
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-brand-forest tracking-tight">
-            Integrated Rural Health & Entitlement System
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-forest tracking-tight">
+            What can GraminCare help you with?
           </h2>
-          <p className="text-brand-charcoalMuted text-xs sm:text-sm">
-            Architected specifically for rural delivery with voice-first assistance, offline resilience, and explainable guidance.
+          <p className="text-brand-charcoalMuted text-xs sm:text-sm leading-relaxed">
+            Essential healthcare navigation designed specifically for rural households — voice-first, vernacular, and verified before you travel.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Module 1: Document-Gap Predictor */}
-          <Link
-            href="/schemes"
-            className="group bg-white rounded-3xl p-6 border border-brand-charcoalBorder hover:border-brand-teal hover:shadow-card transition-all space-y-4 flex flex-col justify-between"
-          >
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-brand-tealMuted text-brand-teal flex items-center justify-center group-hover:scale-105 transition-transform">
-                <FileCheck2 className="w-6 h-6" />
-              </div>
-              <h3 className="font-bold text-lg text-brand-forest group-hover:text-brand-teal transition-colors">
-                Document-Gap Predictor
-              </h3>
-              <p className="text-brand-charcoalMuted text-xs leading-relaxed">
-                Pre-screens household documents against official government scheme rules (PM-JAY, Arogya Karnataka). Identifies fuzzy name discrepancies and provides clear civic fix guidance.
-              </p>
-            </div>
-            <div className="flex items-center text-xs font-bold text-brand-teal group-hover:translate-x-1 transition-transform pt-2 border-t border-brand-creamDark">
-              <span>Open Document Readiness</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </div>
-          </Link>
-
-          {/* Module 2: AI Health Triage */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Card 1: Health */}
           <Link
             href="/triage"
-            className="group bg-white rounded-3xl p-6 border border-brand-charcoalBorder hover:border-brand-teal hover:shadow-card transition-all space-y-4 flex flex-col justify-between"
+            className="group relative bg-white rounded-3xl p-6 border border-brand-charcoalBorder hover:border-brand-teal hover:shadow-card transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 active:translate-y-0"
           >
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-brand-goldMuted text-brand-goldDark flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Stethoscope className="w-6 h-6" />
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-2xl bg-brand-tealMuted text-brand-teal flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <Stethoscope className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-brand-cream border border-brand-charcoalBorder/60 text-brand-forest">
+                  AI Triage
+                </span>
               </div>
-              <h3 className="font-bold text-lg text-brand-forest group-hover:text-brand-teal transition-colors">
-                Voice-First Health Triage
-              </h3>
-              <p className="text-brand-charcoalMuted text-xs leading-relaxed">
-                WHO/ICMR-informed primary clinical decision support. Detects emergency red flags (maternal preeclampsia, acute cardiac distress) and provides low-cost Jan Aushadhi generic recommendations.
+              <div className="space-y-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-teal block">
+                  Health
+                </span>
+                <h3 className="text-lg font-black text-brand-forest group-hover:text-brand-teal transition-colors leading-snug">
+                  Understand a health concern
+                </h3>
+              </div>
+              <p className="text-xs text-brand-charcoalMuted leading-relaxed">
+                Describe symptoms in your regional mother tongue. Identify clinical red flags, receive ICMR-guided primary triage, and locate low-cost Jan Aushadhi medicines.
               </p>
             </div>
-            <div className="flex items-center text-xs font-bold text-brand-teal group-hover:translate-x-1 transition-transform pt-2 border-t border-brand-creamDark">
-              <span>Try Symptom Checker</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
+            <div className="pt-4 mt-4 border-t border-brand-creamDark flex items-center justify-between text-xs font-bold text-brand-forest group-hover:text-brand-teal transition-colors">
+              <span>Start health triage</span>
+              <div className="w-7 h-7 rounded-full bg-brand-cream group-hover:bg-brand-forest text-brand-forest group-hover:text-brand-cream flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </div>
             </div>
           </Link>
 
-          {/* Module 3: Health Twin & Emergency Radar */}
+          {/* Card 2: Government Schemes */}
           <Link
-            href="/health-twin"
-            className="group bg-white rounded-3xl p-6 border border-brand-charcoalBorder hover:border-brand-teal hover:shadow-card transition-all space-y-4 flex flex-col justify-between"
+            href="/schemes"
+            className="group relative bg-white rounded-3xl p-6 border border-brand-charcoalBorder hover:border-brand-goldDark hover:shadow-card transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 active:translate-y-0"
           >
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-brand-creamMuted text-brand-forest flex items-center justify-center group-hover:scale-105 transition-transform">
-                <HeartPulse className="w-6 h-6" />
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-2xl bg-brand-goldMuted text-brand-goldDark flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <FileCheck2 className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-brand-goldMuted border border-brand-gold/30 text-brand-forest">
+                  PM-JAY Cover
+                </span>
               </div>
-              <h3 className="font-bold text-lg text-brand-forest group-hover:text-brand-teal transition-colors">
-                Rural Health Twin
-              </h3>
-              <p className="text-brand-charcoalMuted text-xs leading-relaxed">
-                Digital health avatar tracking blood pressure, blood sugar, and chronic indicators over time. Correlates ASHA home visit records with preventative immunization schedules.
+              <div className="space-y-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-goldDark block">
+                  Government Schemes
+                </span>
+                <h3 className="text-lg font-black text-brand-forest group-hover:text-brand-goldDark transition-colors leading-snug">
+                  Find benefits you're entitled to
+                </h3>
+              </div>
+              <p className="text-xs text-brand-charcoalMuted leading-relaxed">
+                Pre-screen your documents against PM-JAY and state schemes. Spot spelling mismatches between Ration Card and Aadhaar before reaching the hospital desk.
               </p>
             </div>
-            <div className="flex items-center text-xs font-bold text-brand-teal group-hover:translate-x-1 transition-transform pt-2 border-t border-brand-creamDark">
-              <span>View Health Twin</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
+            <div className="pt-4 mt-4 border-t border-brand-creamDark flex items-center justify-between text-xs font-bold text-brand-forest group-hover:text-brand-goldDark transition-colors">
+              <span>Verify scheme eligibility</span>
+              <div className="w-7 h-7 rounded-full bg-brand-cream group-hover:bg-brand-forest text-brand-forest group-hover:text-brand-cream flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </div>
             </div>
           </Link>
+
+          {/* Card 3: Emergency */}
+          <Link
+            href="/emergency"
+            className="group relative bg-white rounded-3xl p-6 border border-brand-charcoalBorder hover:border-red-500 hover:shadow-card transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 active:translate-y-0"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <Ambulance className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-red-50 border border-red-200 text-red-700">
+                  Dial 108 Rapid
+                </span>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-red-600 block">
+                  Emergency
+                </span>
+                <h3 className="text-lg font-black text-brand-forest group-hover:text-red-600 transition-colors leading-snug">
+                  Find help when it matters
+                </h3>
+              </div>
+              <p className="text-xs text-brand-charcoalMuted leading-relaxed">
+                Direct one-touch 108 emergency ambulance connection, GPS-verified distance to nearest operating Primary Health Centres, and maternal urgent care.
+              </p>
+            </div>
+            <div className="pt-4 mt-4 border-t border-brand-creamDark flex items-center justify-between text-xs font-bold text-brand-forest group-hover:text-red-600 transition-colors">
+              <span>Open emergency radar</span>
+              <div className="w-7 h-7 rounded-full bg-brand-cream group-hover:bg-brand-forest text-brand-forest group-hover:text-brand-cream flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 4: Family */}
+          <Link
+            href="/family"
+            className="group relative bg-white rounded-3xl p-6 border border-brand-charcoalBorder hover:border-emerald-600 hover:shadow-card transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 active:translate-y-0"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <Users className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-brand-cream border border-brand-charcoalBorder/60 text-brand-forest">
+                  Health Vault
+                </span>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block">
+                  Family
+                </span>
+                <h3 className="text-lg font-black text-brand-forest group-hover:text-emerald-700 transition-colors leading-snug">
+                  Care for your whole family
+                </h3>
+              </div>
+              <p className="text-xs text-brand-charcoalMuted leading-relaxed">
+                Consolidate household ABHA accounts, track childhood vaccination milestones, and monitor chronic blood pressure and blood sugar for village elders.
+              </p>
+            </div>
+            <div className="pt-4 mt-4 border-t border-brand-creamDark flex items-center justify-between text-xs font-bold text-brand-forest group-hover:text-emerald-700 transition-colors">
+              <span>View family health records</span>
+              <div className="w-7 h-7 rounded-full bg-brand-cream group-hover:bg-brand-forest text-brand-forest group-hover:text-brand-cream flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* SECTION 2: Explore GraminCare (Editorial-Style Visual Cards) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center sm:text-left space-y-2 max-w-2xl">
+          <span className="text-xs font-bold text-brand-goldDark uppercase tracking-widest">
+            Editorial Perspectives
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-forest tracking-tight">
+            Explore GraminCare
+          </h2>
+          <p className="text-brand-charcoalMuted text-xs sm:text-sm leading-relaxed">
+            Crafted for the human realities of rural healthcare delivery — uniting compassionate clinical understanding, administrative preparation, and rapid emergency response.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Visual Card 1: UNDERSTAND */}
+          <Link
+            href="/triage"
+            className="group bg-white rounded-3xl border border-brand-charcoalBorder hover:border-brand-teal overflow-hidden shadow-soft hover:shadow-card transition-all duration-500 flex flex-col justify-between hover:-translate-y-1.5 active:translate-y-0"
+          >
+            <div>
+              {/* Large Imagery */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-brand-forest">
+                <Image
+                  src="/images/rural-doctor-consult.jpg"
+                  alt="Compassionate Indian doctor explaining medical report to rural patient in village health centre"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 rounded-full bg-brand-forestDark/85 backdrop-blur-md text-brand-cream border border-brand-forestLight/60 text-xs font-bold tracking-wide shadow-sm">
+                    Clinical Decision Support
+                  </span>
+                </div>
+              </div>
+
+              {/* Editorial Content */}
+              <div className="p-6 sm:p-7 space-y-3">
+                <div className="space-y-1">
+                  <span className="text-xs font-black tracking-[0.25em] text-brand-teal uppercase block">
+                    UNDERSTAND
+                  </span>
+                  <h3 className="text-2xl font-black text-brand-forest tracking-tight group-hover:text-brand-teal transition-colors">
+                    Understand your health.
+                  </h3>
+                </div>
+                <p className="text-brand-charcoalMuted text-xs sm:text-sm leading-relaxed">
+                  Explain what hurts in your own voice and native dialect. GraminCare translates colloquial expressions into clinical markers, screens for critical warning signs, and recommends low-cost Jan Aushadhi generic alternatives before you travel to the clinic.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-6 sm:px-7 pb-6 sm:pb-7 pt-2">
+              <div className="pt-4 border-t border-brand-creamDark flex items-center justify-between text-brand-forest group-hover:text-brand-teal transition-colors">
+                <span className="font-bold text-xs sm:text-sm">Experience voice triage</span>
+                <div className="w-8 h-8 rounded-full bg-brand-cream group-hover:bg-brand-forest text-brand-forest group-hover:text-brand-cream flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Visual Card 2: PREPARE */}
+          <Link
+            href="/schemes"
+            className="group bg-white rounded-3xl border border-brand-charcoalBorder hover:border-brand-goldDark overflow-hidden shadow-soft hover:shadow-card transition-all duration-500 flex flex-col justify-between hover:-translate-y-1.5 active:translate-y-0"
+          >
+            <div>
+              {/* Large Imagery */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-brand-forest">
+                <Image
+                  src="/images/village-document-prep.jpg"
+                  alt="Rural Indian citizen reviewing government scheme documents with community assistant at Seva Kendra"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 rounded-full bg-brand-forestDark/85 backdrop-blur-md text-brand-cream border border-brand-forestLight/60 text-xs font-bold tracking-wide shadow-sm">
+                    Entitlement Assurance
+                  </span>
+                </div>
+              </div>
+
+              {/* Editorial Content */}
+              <div className="p-6 sm:p-7 space-y-3">
+                <div className="space-y-1">
+                  <span className="text-xs font-black tracking-[0.25em] text-brand-goldDark uppercase block">
+                    PREPARE
+                  </span>
+                  <h3 className="text-2xl font-black text-brand-forest tracking-tight group-hover:text-brand-goldDark transition-colors">
+                    Prepare before you apply.
+                  </h3>
+                </div>
+                <p className="text-brand-charcoalMuted text-xs sm:text-sm leading-relaxed">
+                  Never face rejection at hospital admission counters because of spelling differences. Our optical scanner compares name spellings across Aadhaar, Ration, and BPL cards, generating a clear rectification roadmap for your village Gram Panchayat.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-6 sm:px-7 pb-6 sm:pb-7 pt-2">
+              <div className="pt-4 border-t border-brand-creamDark flex items-center justify-between text-brand-forest group-hover:text-brand-goldDark transition-colors">
+                <span className="font-bold text-xs sm:text-sm">Check document readiness</span>
+                <div className="w-8 h-8 rounded-full bg-brand-cream group-hover:bg-brand-forest text-brand-forest group-hover:text-brand-cream flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Visual Card 3: CONNECT */}
+          <Link
+            href="/emergency"
+            className="group bg-white rounded-3xl border border-brand-charcoalBorder hover:border-red-600 overflow-hidden shadow-soft hover:shadow-card transition-all duration-500 flex flex-col justify-between hover:-translate-y-1.5 active:translate-y-0"
+          >
+            <div>
+              {/* Large Imagery */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-brand-forest">
+                <Image
+                  src="/images/rural-emergency-connect.jpg"
+                  alt="108 Emergency ambulance vehicle and rural health responders ready outside primary health centre"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 rounded-full bg-brand-forestDark/85 backdrop-blur-md text-brand-cream border border-brand-forestLight/60 text-xs font-bold tracking-wide shadow-sm">
+                    Emergency Dispatch Network
+                  </span>
+                </div>
+              </div>
+
+              {/* Editorial Content */}
+              <div className="p-6 sm:p-7 space-y-3">
+                <div className="space-y-1">
+                  <span className="text-xs font-black tracking-[0.25em] text-red-600 uppercase block">
+                    CONNECT
+                  </span>
+                  <h3 className="text-2xl font-black text-brand-forest tracking-tight group-hover:text-red-600 transition-colors">
+                    Connect to care.
+                  </h3>
+                </div>
+                <p className="text-brand-charcoalMuted text-xs sm:text-sm leading-relaxed">
+                  In acute emergencies, every minute counts. GraminCare instantly connects you to 108 dispatch, locates verified operating Primary Health Centres with functioning oxygen and maternity beds, and provides urgent first-response redirection.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-6 sm:px-7 pb-6 sm:pb-7 pt-2">
+              <div className="pt-4 border-t border-brand-creamDark flex items-center justify-between text-brand-forest group-hover:text-red-600 transition-colors">
+                <span className="font-bold text-xs sm:text-sm">Access emergency network</span>
+                <div className="w-8 h-8 rounded-full bg-brand-cream group-hover:bg-brand-forest text-brand-forest group-hover:text-brand-cream flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Authentic Community & Frontline ASHA Spotlight Card */}
+        <div className="bg-gradient-to-r from-brand-forest to-brand-forestDark rounded-3xl p-6 sm:p-8 text-brand-cream border border-brand-forestLight shadow-soft flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+          <div className="relative w-full md:w-72 h-48 sm:h-56 rounded-2xl overflow-hidden shrink-0 border border-brand-gold/30">
+            <Image
+              src="/images/rural-health-worker.jpg"
+              alt="Dedicated Indian community health worker (ASHA) with digital tablet and elder villager at Arogya Kendra"
+              fill
+              sizes="(max-width: 768px) 100vw, 288px"
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-3 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-forestDark text-brand-gold text-xs font-bold border border-brand-gold/30">
+              <ShieldCheck className="w-3.5 h-3.5 text-brand-gold" />
+              <span>Ground-Level Verification</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-white">
+              Designed for Frontline ASHA Workers & Rural Families
+            </h3>
+            <p className="text-brand-cream/80 text-xs sm:text-sm leading-relaxed max-w-2xl">
+              Engineered for low-bandwidth village environments. GraminCare functions reliably on standard mobile devices, speaks 9 regional Indian languages, and helps community health facilitators verify citizen documentation without bureaucratic delays.
+            </p>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-1 text-xs text-brand-gold">
+              <span className="flex items-center gap-1.5 font-semibold">
+                <CheckCircle2 className="w-4 h-4" />
+                ICMR & WHO Aligned Protocols
+              </span>
+              <span className="flex items-center gap-1.5 font-semibold">
+                <CheckCircle2 className="w-4 h-4" />
+                Zero Hospital Gatekeeping
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
